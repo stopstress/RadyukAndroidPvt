@@ -27,6 +27,7 @@ class NavigationFragment : Fragment() {
         val navController = NavHostFragment.findNavController(this)
 
         fragmentLayout.goToDz0.setOnClickListener { navController.navigate(R.id.dz0) }
+        fragmentLayout.goToDz1.setOnClickListener { navController.navigate(R.id.dz1) }
 
         return fragmentLayout
     }
