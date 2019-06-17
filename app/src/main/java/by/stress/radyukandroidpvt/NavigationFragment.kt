@@ -22,7 +22,6 @@ class NavigationFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_navigation, container, false)
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val navController = NavHostFragment.findNavController(this)
