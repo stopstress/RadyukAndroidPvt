@@ -151,7 +151,6 @@
             </LinearLayout>
         </LinearLayout>
 
-
         <TextView
                 android:text="@string/thailandTextView"
                 android:paddingTop="16dp"
