@@ -8,12 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.NavHostFragment
 import kotlinx.android.synthetic.main.fragment_navigation.*
-import kotlinx.android.synthetic.main.fragment_navigation.view.*
 
 
 /**
- * A simple Fragment subclass.
- *
+ * Navigation Fragment *
  */
 class NavigationFragment : Fragment() {
 
@@ -21,16 +19,15 @@ class NavigationFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        val fragmentLayout = inflater.inflate(R.layout.fragment_navigation, container, false)
-
-        val navController = NavHostFragment.findNavController(this)
-
-        fragmentLayout.goToDz0.setOnClickListener { navController.navigate(R.id.dz0) }
-        fragmentLayout.goToDz1.setOnClickListener { navController.navigate(R.id.dz1) }
-
-        return fragmentLayout
+        return inflater.inflate(R.layout.fragment_navigation, container, false)
     }
 
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val navController = NavHostFragment.findNavController(this)
+        goToDz0.setOnClickListener { navController.navigate(R.id.dz0) }
+        goToDz1.setOnClickListener { navController.navigate(R.id.dz1) }
+    }
 
 }

@@ -1,267 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
 <ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".dz1.Dz1Activity"
         android:background="@color/backgroundColor"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-<LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:gravity="center_horizontal"
-        tools:context=".dz1.Dz1Activity" android:orientation="vertical">
-
-    <!--// Austria, Poland, Italy, Colombia, Madagascar, Thailand and Denmark.-->
-
-
-    <TextView
-            android:text="@string/austria"
-            android:paddingTop="16dp" android:textSize="24sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
     <LinearLayout
-            android:orientation="vertical"
-            android:background="@android:color/white"
-            android:layout_width="144dp"
-            android:layout_height="96dp">
-        <LinearLayout
-                android:background="@color/austria"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="0dp">
-        </LinearLayout>
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="0dp">
-        </LinearLayout>
-        <LinearLayout
-                android:background="@color/austria"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="0dp">
-        </LinearLayout>
-    </LinearLayout>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-
-    <TextView
-            android:text="@string/poland"
-            android:paddingTop="16dp" android:textSize="24sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    <LinearLayout
-            android:orientation="vertical"
-            android:background="@android:color/white"
-            android:layout_width="144dp"
-            android:layout_height="90dp">
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="0dp">
-        </LinearLayout>
-        <LinearLayout
-                android:background="@color/poland"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="0dp">
-        </LinearLayout>
-    </LinearLayout>
-
-
-    <TextView
-            android:text="@string/italy"
-            android:paddingTop="16dp" android:textSize="24sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    <LinearLayout
-            android:orientation="horizontal"
-            android:background="@android:color/white"
-            android:layout_width="144dp"
-            android:layout_height="96dp">
-        <LinearLayout
-                android:layout_width="0dp"
-                android:background="@color/italy1"
-                android:layout_weight="1"
-                android:layout_height="match_parent">
-        </LinearLayout>
-        <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent">
-        </LinearLayout>
-        <LinearLayout
-                android:layout_width="0dp"
-                android:background="@color/italy2"
-                android:layout_weight="1"
-                android:layout_height="match_parent">
-        </LinearLayout>
-    </LinearLayout>
-
-
-    <TextView
-            android:text="@string/colombia"
-            android:paddingTop="16dp" android:textSize="24sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    <LinearLayout
-            android:orientation="vertical"
-            android:background="@color/colombia1"
-            android:layout_width="144dp"
-            android:layout_height="96dp">
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_weight="2"
-                android:layout_height="0dp">
-        </LinearLayout>
-        <LinearLayout
-                android:background="@color/colombia2"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="0dp">
-        </LinearLayout>
-        <LinearLayout
-                android:background="@color/colombia3"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="0dp">
-        </LinearLayout>
-    </LinearLayout>
-
-
-    <TextView
-            android:text="@string/madagascar"
-            android:paddingTop="16dp" android:textSize="24sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    <LinearLayout
-            android:orientation="horizontal"
-
-            android:background="@android:color/white"
-            android:layout_width="144dp"
-            android:layout_height="96dp">
-        <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent">
-        </LinearLayout>
-        <LinearLayout
-                android:orientation="vertical"
-                android:background="@color/madagascar1"
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:layout_height="match_parent">
-
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_weight="1"
-                    android:layout_height="0dp">
-            </LinearLayout>
-            <LinearLayout
-                    android:background="@color/madagascar2"
-                    android:layout_width="match_parent"
-                    android:layout_weight="1"
-                    android:layout_height="0dp">
-            </LinearLayout>
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-
-    <TextView
-            android:text="@string/thailand"
-            android:paddingTop="16dp" android:textSize="24sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    <LinearLayout
-            android:orientation="vertical"
-            android:background="@color/thailand1"
-            android:gravity="center_vertical"
-            android:layout_width="144dp"
-            android:layout_height="96dp">
+        <TextView
+                android:text="@string/austriaTextView"
+                android:paddingTop="16dp"
+                android:textSize="24sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
         <LinearLayout
                 android:orientation="vertical"
                 android:background="@android:color/white"
-                android:gravity="center_vertical"
-                android:layout_width="match_parent"
-                android:layout_height="64dp">
+                android:layout_width="144dp"
+                android:layout_height="96dp">
             <LinearLayout
-                    android:background="@color/thailand2"
+                    android:background="@color/austria"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="0dp"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="0dp"/>
+            <LinearLayout
+                    android:background="@color/austria"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="0dp"/>
+        </LinearLayout>
+
+        <TextView
+                android:text="@string/polandTextView"
+                android:paddingTop="16dp"
+                android:textSize="24sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <LinearLayout
+                android:orientation="vertical"
+                android:background="@android:color/white"
+                android:layout_width="144dp"
+                android:layout_height="90dp">
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="0dp"/>
+            <LinearLayout
+                    android:background="@color/poland"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="0dp"/>
+        </LinearLayout>
+
+        <TextView
+                android:text="@string/italyTextView"
+                android:paddingTop="16dp"
+                android:textSize="24sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:background="@android:color/white"
+                android:layout_width="144dp"
+                android:layout_height="96dp">
+            <LinearLayout
+                    android:layout_width="0dp"
+                    android:background="@color/italy1"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"/>
+            <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"/>
+            <LinearLayout
+                    android:layout_width="0dp"
+                    android:background="@color/italy2"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <TextView
+                android:text="@string/colombiaTextView"
+                android:paddingTop="16dp"
+                android:textSize="24sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <LinearLayout
+                android:orientation="vertical"
+                android:background="@color/colombia1"
+                android:layout_width="144dp"
+                android:layout_height="96dp">
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="2"
+                    android:layout_height="0dp"/>
+            <LinearLayout
+                    android:background="@color/colombia2"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="0dp"/>
+            <LinearLayout
+                    android:background="@color/colombia3"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="0dp"/>
+        </LinearLayout>
+
+        <TextView
+                android:text="@string/madagascarTextView"
+                android:paddingTop="16dp"
+                android:textSize="24sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:background="@android:color/white"
+                android:layout_width="144dp"
+                android:layout_height="96dp">
+            <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"/>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:background="@color/madagascar1"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="match_parent">
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="0dp"/>
+                <LinearLayout
+                        android:background="@color/madagascar2"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="0dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <TextView
+                android:text="@string/thailandTextView"
+                android:paddingTop="16dp"
+                android:textSize="24sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <LinearLayout
+                android:orientation="vertical"
+                android:background="@color/thailand1"
+                android:gravity="center_vertical"
+                android:layout_width="144dp"
+                android:layout_height="96dp">
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:background="@android:color/white"
                     android:gravity="center_vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="32dp">
+                    android:layout_height="64dp">
+                <LinearLayout
+                        android:background="@color/thailand2"
+                        android:gravity="center_vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"/>
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 
-
-    <TextView
-            android:text="@string/denmark"
-            android:paddingTop="16dp" android:textSize="24sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    <LinearLayout
-            android:orientation="vertical"
-            android:background="@color/flagColorDenmark"
-            android:layout_width="148dp"
-            android:layout_height="112dp">
+        <TextView
+                android:text="@string/denmarkTextView"
+                android:paddingTop="16dp"
+                android:textSize="24sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
         <LinearLayout
-                android:layout_height="0dp"
-                android:layout_weight="48"
-                android:orientation="horizontal"
-                android:layout_width="match_parent">
+                android:orientation="vertical"
+                android:background="@color/flagColorDenmark"
+                android:layout_width="148dp"
+                android:layout_height="112dp">
             <LinearLayout
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="48">
+                    android:layout_height="0dp"
+                    android:layout_weight="48"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent">
+                <LinearLayout
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="48"/>
+                <LinearLayout
+                        android:background="@android:color/white"
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="16"/>
+                <LinearLayout
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="84"/>
             </LinearLayout>
             <LinearLayout
                     android:background="@android:color/white"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="16">
-            </LinearLayout>
+                    android:layout_height="0dp"
+                    android:layout_weight="16"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"/>
             <LinearLayout
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="84">
+                    android:layout_height="0dp"
+                    android:layout_weight="48"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent">
+                <LinearLayout
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="48"/>
+                <LinearLayout
+                        android:background="@android:color/white"
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="16"/>
+                <LinearLayout
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="84"/>
             </LinearLayout>
         </LinearLayout>
-        <LinearLayout
-                android:background="@android:color/white"
-                android:layout_height="0dp"
-                android:layout_weight="16"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"                >
-        </LinearLayout>
-        <LinearLayout
-                android:layout_height="0dp"
-                android:layout_weight="48"
-                android:orientation="horizontal"
-                android:layout_width="match_parent">
-            <LinearLayout
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="48">
-            </LinearLayout>
-            <LinearLayout
-                    android:background="@android:color/white"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="16">
-            </LinearLayout>
-            <LinearLayout
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="84">
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
 
-</LinearLayout>
+    </LinearLayout>
 </ScrollView>
