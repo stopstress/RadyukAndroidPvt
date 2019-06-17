@@ -3,4 +3,17 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="flagColorDenmark">#D40E34</color>
+    <color name="thailand1">#CC1224</color>
+    <color name="thailand2">#04029C</color>
+    <color name="backgroundColor">#A0A0A0</color>
+    <color name="madagascar1">#FC3E34</color>
+    <color name="madagascar2">#047E3C</color>
+    <color name="colombia1">#FCD214</color>
+    <color name="colombia2">#043A94</color>
+    <color name="colombia3">#CC1224</color>
+    <color name="italy1">#048E44</color>
+    <color name="italy2">#D4222C</color>
+    <color name="poland">#EC160C</color>
+    <color name="austria">#DC1E04</color>
 </resources>

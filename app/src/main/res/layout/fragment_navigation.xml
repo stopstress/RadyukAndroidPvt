@@ -9,5 +9,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/goToDz0"/>
 
+    <Button
+            android:text="@string/dz1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/goToDz1"/>
 
 </LinearLayout>

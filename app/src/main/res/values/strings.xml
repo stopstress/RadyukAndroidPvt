@@ -4,4 +4,12 @@
     <string name="text_2">Text 2 2 2 2 2 2 2</string>
     <string name="button_title">Change text</string>
     <string name="dz0">Dz0</string>
+    <string name="dz1">dz1</string>
+    <string name="austriaTextView">Austria</string>
+    <string name="polandTextView">Poland</string>
+    <string name="italyTextView">Italy</string>
+    <string name="colombiaTextView">Colombia</string>
+    <string name="madagascarTextView">Madagascar</string>
+    <string name="thailandTextView">Thailand</string>
+    <string name="denmarkTextView">Denmark</string>
 </resources>
