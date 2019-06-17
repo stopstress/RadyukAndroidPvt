@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">RadyukAndroidPvt</string>
+    <string name="text_1">Text 1 1 1 1 1 1</string>
+    <string name="text_2">Text 2 2 2 2 2 2 2</string>
+    <string name="button_title">Change text</string>
+    <string name="dz0">Dz0</string>
 </resources>

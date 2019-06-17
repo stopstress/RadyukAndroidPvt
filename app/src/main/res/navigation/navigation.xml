@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation"
+            app:startDestination="@id/navigationFragment">
+    <fragment android:id="@+id/navigationFragment" android:name="by.stress.radyukandroidpvt.NavigationFragment"
+              android:label="fragment_navigation" tools:layout="@layout/fragment_navigation">
+        <action android:id="@+id/action_navigationFragment_to_dz0" app:destination="@id/dz0"/>
+    </fragment>
+    <activity android:id="@+id/dz0" android:name="by.stress.radyukandroidpvt.dz0.Dz0Activity"
+              android:label="dz0" tools:layout="@layout/activity_dz0"/>
+</navigation>
