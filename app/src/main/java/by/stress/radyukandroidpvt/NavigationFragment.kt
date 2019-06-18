@@ -31,4 +31,9 @@ class NavigationFragment : Fragment() {
         goToDz2b.setOnClickListener { navController.navigate(R.id.dz2b) }
     }
 
+    fun BADNAMe () {
+          val VAL123 = 1
+    }
+
+
 }
