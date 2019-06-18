@@ -14,4 +14,11 @@
     <string name="denmarkTextView">Denmark</string>
     <string name="dz2a">Dz2a</string>
     <string name="dz2b">Dz2b</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="log_in">Log In</string>
+    <string name="create_account">Create Account</string>
+    <string name="logo">Logo</string>
+    <string name="enter_username_hint">Enter Username</string>
+    <string name="forgot_username_password"><u>Forgot your username/password?</u></string>
 </resources>
