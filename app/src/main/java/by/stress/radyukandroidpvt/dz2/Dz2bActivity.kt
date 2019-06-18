@@ -11,5 +11,5 @@ class Dz2bActivity : AppCompatActivity() {
         setContentView(R.layout.activity_dz2b)
     }
 
-    
+
 }
