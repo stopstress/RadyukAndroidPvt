@@ -1,7 +1,7 @@
 package by.stress.radyukandroidpvt.dz0
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import by.stress.radyukandroidpvt.R
 import kotlinx.android.synthetic.main.activity_dz0.*
 
@@ -22,7 +22,6 @@ class Dz0Activity : AppCompatActivity() {
         button.setOnClickListener() {
             replaceTextAndColor()
         }
-
     }
 
     fun replaceTextAndColor() {
@@ -36,5 +35,4 @@ class Dz0Activity : AppCompatActivity() {
         textView1.background = textView2.background
         textView2.background = color1
     }
-
 }
