@@ -1,17 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              tools:context=".NavigationFragment" android:orientation="vertical">
-    <Button
-            android:text="@string/dz0"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/goToDz0"/>
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".NavigationFragment">
 
     <Button
-            android:text="@string/dz1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/goToDz1"/>
+        android:id="@+id/goToDz0"
+        style="@style/MenuButtonStyle"
+        android:text="@string/dz0" />
+
+    <Button
+        android:id="@+id/goToDz1"
+        style="@style/MenuButtonStyle"
+        android:text="@string/dz1" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/goToDz2a"
+            style="@style/MenuButtonStyle"
+            android:text="@string/dz2a" />
+
+        <Button
+            android:id="@+id/goToDz2b"
+            style="@style/MenuButtonStyle"
+            android:text="@string/dz2b" />
+
+    </LinearLayout>
 
 </LinearLayout>
