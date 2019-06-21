@@ -24,6 +24,8 @@ class Dz2bActivity : AppCompatActivity() {
                 .transform(RoundedTransformation(400, 0))
                 .fit()
                 .into(imageViewDz2b)
+
+            
         }
     }
 }
