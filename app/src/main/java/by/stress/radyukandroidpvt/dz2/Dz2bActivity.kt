@@ -2,7 +2,8 @@ package by.stress.radyukandroidpvt.dz2
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.squareup.picasso.Picasso
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.activity_dz2b.*
 
 class Dz2bActivity : AppCompatActivity() {
@@ -19,10 +20,9 @@ class Dz2bActivity : AppCompatActivity() {
 
             val imgUri = editTextDz2b.text.toString()
 
-            Picasso.get()
+            Glide.with(this)
                 .load(imgUri)
-                .transform(RoundedTransformation(400, 0))
-                .fit()
+                .apply(RequestOptions.circleCropTransform())
                 .into(imageViewDz2b)
         }
     }

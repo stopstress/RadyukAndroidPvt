@@ -16,22 +16,31 @@
         android:inputType="textUri"
         android:text="https://cdn.pixabay.com/photo/2016/12/04/21/58/rabbit-1882699_960_720.jpg"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageViewDz2b"
+        app:layout_constraintBottom_toTopOf="@+id/RelativeLayoutDz2b"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageViewDz2b"
-        android:layout_width="320dp"
-        android:layout_height="240dp"
+    <RelativeLayout
+        android:id="@+id/RelativeLayoutDz2b"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonDz2b"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDz2b"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        android:background="@drawable/image_border_dz2b">
+
+        <ImageView
+            android:id="@+id/imageViewDz2b"
+            android:layout_width="320dp"
+            android:layout_height="240dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/image_border_dz2b"
+            app:srcCompat="@mipmap/ic_launcher_round" />
+    </RelativeLayout>
 
     <Button
         android:id="@+id/buttonDz2b"
@@ -42,7 +51,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewDz2b" />
-
+        app:layout_constraintTop_toBottomOf="@+id/RelativeLayoutDz2b" />
 
 </android.support.constraint.ConstraintLayout>
