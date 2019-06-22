@@ -24,7 +24,6 @@ class Dz2bActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         progressBarDz2b.visibility = INVISIBLE
-
     }
 
     override fun onStart() {
@@ -61,13 +60,11 @@ class Dz2bActivity : AppCompatActivity() {
                         try { // чтобы успеть рассмотреть progressBar ;)
                             Thread.sleep(3000)
                             progressBarDz2b.visibility = INVISIBLE
-
                         } catch (e: InterruptedException1) {
                             e.printStackTrace()
                         } finally {
                             return false
                         }
-
                     }
                 })
                 .apply(RequestOptions.circleCropTransform())
