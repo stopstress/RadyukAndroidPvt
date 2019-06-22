@@ -16,4 +16,8 @@
     <color name="italy2">#D4222C</color>
     <color name="poland">#EC160C</color>
     <color name="austria">#DC1E04</color>
+    <color name="dz3colorOrange">#d45807</color>
+    <color name="dz3colorWhite">#ffffff</color>
+    <color name="dz3colorLightGray">#d4d3d3</color>
+    <color name="dz3colorBlack">#000000</color>
 </resources>

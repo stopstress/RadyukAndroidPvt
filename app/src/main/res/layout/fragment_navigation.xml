@@ -35,4 +35,9 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/goToDz3"
+        style="@style/MenuButtonStyle"
+        android:text="@string/dz3" />
+
 </LinearLayout>

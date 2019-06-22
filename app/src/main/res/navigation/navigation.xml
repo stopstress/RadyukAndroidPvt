@@ -9,6 +9,9 @@
         <action android:id="@+id/action_navigationFragment_to_dz1Activity" app:destination="@id/dz1"/>
         <action android:id="@+id/action_navigationFragment_to_dz2aActivity" app:destination="@id/dz2a"/>
         <action android:id="@+id/action_navigationFragment_to_dz2b" app:destination="@id/dz2b"/>
+        <action
+            android:id="@+id/action_navigationFragment_to_dz3"
+            app:destination="@id/dz3" />
     </fragment>
     <activity android:id="@+id/dz0" android:name="by.stress.radyukandroidpvt.dz0.Dz0Activity"
               android:label="dz0" tools:layout="@layout/activity_dz0"/>
@@ -18,4 +21,9 @@
               android:label="dz2a" tools:layout="@layout/activity_dz2a"/>
     <activity android:id="@+id/dz2b" android:name="by.stress.radyukandroidpvt.dz2.Dz2bActivity"
               android:label="dz2b" tools:layout="@layout/activity_dz2b"/>
+    <activity
+        android:id="@+id/dz3"
+        android:name="by.stress.radyukandroidpvt.dz3.Dz3Activity"
+        android:label="dz3"
+        tools:layout="@layout/activity_dz3" />
 </navigation>

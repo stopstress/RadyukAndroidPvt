@@ -1,9 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText"
     tools:context=".dz3.Dz3Activity">
 
-</android.support.constraint.ConstraintLayout>
+    <FrameLayout
+        android:background="@color/dz3colorBlack"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/imageViewBell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:padding="10dp"
+            android:src="@drawable/icon_bell_dz3"
+            tools:ignore="ContentDescription" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:background="@color/dz3colorBlack"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+        <FrameLayout
+            android:layout_weight="35"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            tools:ignore="NestedWeights">
+            <FrameLayout
+                android:layout_gravity="center"
+                android:padding="16dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/image_border_dz3">
+            </FrameLayout>
+            <ImageView
+                android:id="@+id/imageViewDz3"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center"
+                android:layout_width="115dp"
+                android:layout_height="match_parent"
+                tools:ignore="ContentDescription" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_weight="65"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dylan Conner"
+                android:padding="8dp"
+                android:textColor="@color/dz3colorWhite"
+                android:fontFamily="@font/monda_bold"
+                android:textSize="25sp"
+                android:layout_gravity="center_vertical"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:background="@color/dz3colorBlack"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:text="Trophies"
+                    style="@style/Dz3HeaderTitle"/>
+                <TextView
+                    android:text="Following"
+                    style="@style/Dz3HeaderTitle"/>
+                <TextView
+                    android:text="Followers"
+                    style="@style/Dz3HeaderTitle"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:text="4"
+                    style="@style/Dz3HeaderValue"/>
+                <TextView
+                    android:text="54"
+                    style="@style/Dz3HeaderValue"/>
+                <TextView
+                    android:text="12"
+                    style="@style/Dz3HeaderValue"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:background="@color/dz3colorLightGray"
+            android:layout_gravity="bottom"
+            android:layout_height="1dp">
+        </FrameLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/dz3colorBlack"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:text="Name"
+                style="@style/Dz3FieldTitle"/>
+            <TextView
+                android:text="Nial Brockman"
+                style="@style/Dz3FieldValue"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:text="Country"
+                style="@style/Dz3FieldTitle"/>
+            <TextView
+                android:text="USA"
+                style="@style/Dz3FieldValue"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:text="Postal Code"
+                style="@style/Dz3FieldTitle"/>
+            <TextView
+                android:text="60604"
+                style="@style/Dz3FieldValue"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:text="Date Of Birth"
+                style="@style/Dz3FieldTitle"/>
+            <TextView
+                android:text="Feb. 21, 2000"
+                style="@style/Dz3FieldValue"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:text="Gender"
+                style="@style/Dz3FieldTitle"/>
+            <TextView
+                android:text="Male"
+                style="@style/Dz3FieldValue"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:text="Height"
+                style="@style/Dz3FieldTitle"/>
+            <TextView
+                android:text="6'1&quot;"
+                style="@style/Dz3FieldValue"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:text="Phone"
+                style="@style/Dz3FieldTitle"/>
+            <TextView
+                android:text="(781) 547-3320"
+                style="@style/Dz3FieldValue"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
