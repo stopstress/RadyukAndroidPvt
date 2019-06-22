@@ -14,11 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".dz3.Dz3Activity"></activity>
-        <activity android:name=".dz2.Dz2bActivity"></activity>
-        <activity android:name=".dz2.Dz2aActivity"></activity>
-        <activity android:name=".dz1.Dz1Activity"></activity>
-        <activity android:name=".dz0.Dz0Activity"></activity>
+        <activity android:name=".dz3.Dz3Activity" />
+        <activity android:name=".dz2.Dz2bActivity" />
+        <activity android:name=".dz2.Dz2aActivity" />
+        <activity android:name=".dz1.Dz1Activity" />
+        <activity android:name=".dz0.Dz0Activity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
