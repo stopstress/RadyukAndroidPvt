@@ -22,6 +22,19 @@ class Dz2bActivity : AppCompatActivity() {
 
             Glide.with(this)
                 .load(imgUri)
+/*
+                .listener(object : RequestListener<Drawable> {
+                    override fun onLoadFailed(p0: GlideException?, p1: Any?, target: Target<Drawable>?, p3: Boolean): Boolean {
+                        progressBar.visibility = View.GONE
+                        Toast.makeText(this@Dz2bActivity, "Failed to load image", Toast.LENGTH_SHORT).show()
+                        return false
+                    }
+
+                    override fun onResourceReady(p0: Drawable?, p1: Any?, target: Target<Drawable>?, p3: DataSource?, p4: Boolean): Boolean {
+                        progressBar.visibility = View.GONE
+                        return false
+                    }
+                })           */
                 .apply(RequestOptions.circleCropTransform())
                 .into(imageViewDz2b)
         }
