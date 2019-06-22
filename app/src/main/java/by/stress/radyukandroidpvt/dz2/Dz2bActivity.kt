@@ -12,7 +12,6 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
 import kotlinx.android.synthetic.main.activity_dz2b.*
-import java.lang.InterruptedException as InterruptedException1
 
 class Dz2bActivity : AppCompatActivity() {
 
@@ -46,7 +45,7 @@ class Dz2bActivity : AppCompatActivity() {
                         target: Target<Drawable>?,
                         isFirstResource: Boolean
                     ): Boolean {
-                        return false
+                        return true
                     }
 
                     override fun onResourceReady(
@@ -56,15 +55,8 @@ class Dz2bActivity : AppCompatActivity() {
                         dataSource: DataSource?,
                         isFirstResource: Boolean
                     ): Boolean {
-
-                        try { // чтобы успеть рассмотреть progressBar ;)
-                            Thread.sleep(3000)
-                            progressBarDz2b.visibility = INVISIBLE
-                        } catch (e: InterruptedException1) {
-                            e.printStackTrace()
-                        } finally {
-                            return false
-                        }
+                        progressBarDz2b.visibility = INVISIBLE
+                        return false
                     }
                 })
                 .apply(RequestOptions.circleCropTransform())
