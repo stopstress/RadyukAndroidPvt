@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.view.View.GONE
 import android.view.View.INVISIBLE
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
@@ -12,6 +13,7 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
 import kotlinx.android.synthetic.main.activity_dz2b.*
+import org.jetbrains.anko.longToast
 
 class Dz2bActivity : AppCompatActivity() {
 
@@ -45,6 +47,8 @@ class Dz2bActivity : AppCompatActivity() {
                         target: Target<Drawable>?,
                         isFirstResource: Boolean
                     ): Boolean {
+                        progressBarDz2b.visibility = GONE
+                        longToast("Не удалось загрузить изображение")
                         return true
                     }
 
@@ -56,6 +60,7 @@ class Dz2bActivity : AppCompatActivity() {
                         isFirstResource: Boolean
                     ): Boolean {
                         progressBarDz2b.visibility = INVISIBLE
+                        longToast("Изображение успешно загружено")
                         return false
                     }
                 })
