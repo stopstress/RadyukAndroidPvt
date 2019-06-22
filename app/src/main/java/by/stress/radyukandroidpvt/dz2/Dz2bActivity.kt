@@ -1,10 +1,18 @@
 package by.stress.radyukandroidpvt.dz2
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.View
+import android.view.View.INVISIBLE
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.DataSource
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.RequestOptions
+import com.bumptech.glide.request.target.Target
 import kotlinx.android.synthetic.main.activity_dz2b.*
+import java.lang.InterruptedException as InterruptedException1
 
 class Dz2bActivity : AppCompatActivity() {
 
@@ -13,28 +21,55 @@ class Dz2bActivity : AppCompatActivity() {
         setContentView(by.stress.radyukandroidpvt.R.layout.activity_dz2b)
     }
 
+    override fun onResume() {
+        super.onResume()
+        progressBarDz2b.visibility = INVISIBLE
+
+    }
+
     override fun onStart() {
         super.onStart()
 
         buttonDz2b.setOnClickListener {
 
+            progressBarDz2b.visibility = View.VISIBLE
+
             val imgUri = editTextDz2b.text.toString()
 
             Glide.with(this)
                 .load(imgUri)
-/*
+
                 .listener(object : RequestListener<Drawable> {
-                    override fun onLoadFailed(p0: GlideException?, p1: Any?, target: Target<Drawable>?, p3: Boolean): Boolean {
-                        progressBar.visibility = View.GONE
-                        Toast.makeText(this@Dz2bActivity, "Failed to load image", Toast.LENGTH_SHORT).show()
+
+                    override fun onLoadFailed(
+                        e: GlideException?,
+                        model: Any?,
+                        target: Target<Drawable>?,
+                        isFirstResource: Boolean
+                    ): Boolean {
                         return false
                     }
 
-                    override fun onResourceReady(p0: Drawable?, p1: Any?, target: Target<Drawable>?, p3: DataSource?, p4: Boolean): Boolean {
-                        progressBar.visibility = View.GONE
-                        return false
+                    override fun onResourceReady(
+                        resource: Drawable?,
+                        model: Any?,
+                        target: Target<Drawable>?,
+                        dataSource: DataSource?,
+                        isFirstResource: Boolean
+                    ): Boolean {
+
+                        try { // чтобы успеть рассмотреть progressBar ;)
+                            Thread.sleep(3000)
+                            progressBarDz2b.visibility = INVISIBLE
+
+                        } catch (e: InterruptedException1) {
+                            e.printStackTrace()
+                        } finally {
+                            return false
+                        }
+
                     }
-                })           */
+                })
                 .apply(RequestOptions.circleCropTransform())
                 .into(imageViewDz2b)
         }
