@@ -23,7 +23,4 @@ class Dz3Activity : AppCompatActivity() {
             .apply(RequestOptions.circleCropTransform())
             .into(imageViewDz3)
     }
-
-
-
 }
