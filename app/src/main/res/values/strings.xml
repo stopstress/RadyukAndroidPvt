@@ -4,7 +4,7 @@
     <string name="text_2">Text 2 2 2 2 2 2 2</string>
     <string name="button_title">Change text</string>
     <string name="dz0">Dz0</string>
-    <string name="dz1">dz1</string>
+    <string name="dz1">Dz1</string>
     <string name="austriaTextView">Austria</string>
     <string name="polandTextView">Poland</string>
     <string name="italyTextView">Italy</string>
@@ -12,4 +12,15 @@
     <string name="madagascarTextView">Madagascar</string>
     <string name="thailandTextView">Thailand</string>
     <string name="denmarkTextView">Denmark</string>
+    <string name="dz2a">Dz2a</string>
+    <string name="dz2b">Dz2b</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="log_in">Log In</string>
+    <string name="create_account">Create Account</string>
+    <string name="logo">Logo</string>
+    <string name="enter_username_hint">Enter Username</string>
+    <string name="forgot_username_password"><u>Forgot your username/password?</u></string>
+    <string name="dz2b_load_image_button">Load Image</string>
+    <string name="dz2b_uri">https://cdn.pixabay.com/photo/2016/12/04/21/58/rabbit-1882699_960_720.jpg</string>
 </resources>
