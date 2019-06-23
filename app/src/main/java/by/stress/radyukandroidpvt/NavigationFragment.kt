@@ -31,5 +31,6 @@ class NavigationFragment : Fragment() {
         goToDz1.setOnClickListener { navController.navigate(R.id.dz1) }
         goToDz2a.setOnClickListener { navController.navigate(R.id.dz2a) }
         goToDz2b.setOnClickListener { navController.navigate(R.id.dz2b) }
+        goToDz3.setOnClickListener { navController.navigate(R.id.dz3) }
     }
 }
