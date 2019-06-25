@@ -14,6 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".dz5.Dz5bActivity" />
+        <activity android:name=".dz5.Dz5aActivity" />
         <activity android:name=".dz3.Dz3Activity" />
         <activity android:name=".dz2.Dz2bActivity" />
         <activity android:name=".dz2.Dz2aActivity" />

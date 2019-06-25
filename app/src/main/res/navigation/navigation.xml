@@ -1,29 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation"
-            app:startDestination="@id/navigationFragment">
-    <fragment android:id="@+id/navigationFragment" android:name="by.stress.radyukandroidpvt.NavigationFragment"
-              android:label="fragment_navigation" tools:layout="@layout/fragment_navigation">
-        <action android:id="@+id/action_navigationFragment_to_dz0" app:destination="@id/dz0"/>
-        <action android:id="@+id/action_navigationFragment_to_dz1Activity" app:destination="@id/dz1"/>
-        <action android:id="@+id/action_navigationFragment_to_dz2aActivity" app:destination="@id/dz2a"/>
-        <action android:id="@+id/action_navigationFragment_to_dz2b" app:destination="@id/dz2b"/>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/navigationFragment">
+    <fragment
+        android:id="@+id/navigationFragment"
+        android:name="by.stress.radyukandroidpvt.NavigationFragment"
+        android:label="fragment_navigation"
+        tools:layout="@layout/fragment_navigation">
+        <action
+            android:id="@+id/action_navigationFragment_to_dz0"
+            app:destination="@id/dz0" />
+        <action
+            android:id="@+id/action_navigationFragment_to_dz1Activity"
+            app:destination="@id/dz1" />
+        <action
+            android:id="@+id/action_navigationFragment_to_dz2aActivity"
+            app:destination="@id/dz2a" />
+        <action
+            android:id="@+id/action_navigationFragment_to_dz2b"
+            app:destination="@id/dz2b" />
         <action
             android:id="@+id/action_navigationFragment_to_dz3"
             app:destination="@id/dz3" />
+        <action
+            android:id="@+id/action_navigationFragment_to_dz5b"
+            app:destination="@id/dz5b" />
+        <action
+            android:id="@+id/action_navigationFragment_to_dz5a"
+            app:destination="@id/dz5a" />
     </fragment>
-    <activity android:id="@+id/dz0" android:name="by.stress.radyukandroidpvt.dz0.Dz0Activity"
-              android:label="dz0" tools:layout="@layout/activity_dz0"/>
-    <activity android:id="@+id/dz1" android:name="by.stress.radyukandroidpvt.dz1.Dz1Activity"
-              android:label="dz1" tools:layout="@layout/activity_dz1"/>
-    <activity android:id="@+id/dz2a" android:name="by.stress.radyukandroidpvt.dz2.Dz2aActivity"
-              android:label="dz2a" tools:layout="@layout/activity_dz2a"/>
-    <activity android:id="@+id/dz2b" android:name="by.stress.radyukandroidpvt.dz2.Dz2bActivity"
-              android:label="dz2b" tools:layout="@layout/activity_dz2b"/>
+    <activity
+        android:id="@+id/dz0"
+        android:name="by.stress.radyukandroidpvt.dz0.Dz0Activity"
+        android:label="dz0"
+        tools:layout="@layout/activity_dz0" />
+    <activity
+        android:id="@+id/dz1"
+        android:name="by.stress.radyukandroidpvt.dz1.Dz1Activity"
+        android:label="dz1"
+        tools:layout="@layout/activity_dz1" />
+    <activity
+        android:id="@+id/dz2a"
+        android:name="by.stress.radyukandroidpvt.dz2.Dz2aActivity"
+        android:label="dz2a"
+        tools:layout="@layout/activity_dz2a" />
+    <activity
+        android:id="@+id/dz2b"
+        android:name="by.stress.radyukandroidpvt.dz2.Dz2bActivity"
+        android:label="dz2b"
+        tools:layout="@layout/activity_dz2b" />
     <activity
         android:id="@+id/dz3"
         android:name="by.stress.radyukandroidpvt.dz3.Dz3Activity"
         android:label="dz3"
         tools:layout="@layout/activity_dz3" />
+    <activity
+        android:id="@+id/dz5a"
+        android:name="by.stress.radyukandroidpvt.dz5.Dz5aActivity"
+        android:label="dz5a"
+        tools:layout="@layout/activity_dz5a" />
+    <activity
+        android:id="@+id/dz5b"
+        android:name="by.stress.radyukandroidpvt.dz5.Dz5bActivity"
+        android:label="dz5b"
+        tools:layout="@layout/activity_dz5b" />
 </navigation>

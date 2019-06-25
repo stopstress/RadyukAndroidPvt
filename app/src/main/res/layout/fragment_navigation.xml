@@ -40,4 +40,21 @@
         style="@style/MenuButtonStyle"
         android:text="@string/dz3" />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/goToDz5a"
+            style="@style/MenuButtonStyle"
+            android:text="@string/dz5a" />
+
+        <Button
+            android:id="@+id/goToDz5b"
+            style="@style/MenuButtonStyle"
+            android:text="@string/dz5b" />
+
+    </LinearLayout>
+
 </LinearLayout>

@@ -27,10 +27,12 @@ class NavigationFragment : Fragment() {
             savedInstanceState
         )
         val navController = NavHostFragment.findNavController(this)
-        goToDz0.setOnClickListener { navController.navigate(R.id.dz0) }
-        goToDz1.setOnClickListener { navController.navigate(R.id.dz1) }
+        goToDz0.setOnClickListener  { navController.navigate(R.id.dz0)  }
+        goToDz1.setOnClickListener  { navController.navigate(R.id.dz1)  }
         goToDz2a.setOnClickListener { navController.navigate(R.id.dz2a) }
         goToDz2b.setOnClickListener { navController.navigate(R.id.dz2b) }
-        goToDz3.setOnClickListener { navController.navigate(R.id.dz3) }
+        goToDz3.setOnClickListener  { navController.navigate(R.id.dz3)  }
+        goToDz5a.setOnClickListener { navController.navigate(R.id.dz5a) }
+        goToDz5b.setOnClickListener { navController.navigate(R.id.dz5b) }
     }
 }
