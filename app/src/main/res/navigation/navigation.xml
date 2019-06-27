@@ -25,11 +25,8 @@
             android:id="@+id/action_navigationFragment_to_dz3"
             app:destination="@id/dz3" />
         <action
-            android:id="@+id/action_navigationFragment_to_dz5b"
-            app:destination="@id/dz5b" />
-        <action
-            android:id="@+id/action_navigationFragment_to_dz5a"
-            app:destination="@id/dz5a" />
+            android:id="@+id/action_navigationFragment_to_dz4"
+            app:destination="@id/dz4" />
     </fragment>
     <activity
         android:id="@+id/dz0"
@@ -57,13 +54,8 @@
         android:label="dz3"
         tools:layout="@layout/activity_dz3" />
     <activity
-        android:id="@+id/dz5a"
-        android:name="by.stress.radyukandroidpvt.dz5.Dz5aActivity"
-        android:label="dz5a"
-        tools:layout="@layout/activity_dz5a" />
-    <activity
-        android:id="@+id/dz5b"
-        android:name="by.stress.radyukandroidpvt.dz5.Dz5bActivity"
-        android:label="dz5b"
-        tools:layout="@layout/activity_dz5b" />
+        android:id="@+id/dz4"
+        android:name="by.stress.radyukandroidpvt.dz4.Dz4Activity"
+        android:label="dz4"
+        tools:layout="@layout/activity_dz4" />
 </navigation>

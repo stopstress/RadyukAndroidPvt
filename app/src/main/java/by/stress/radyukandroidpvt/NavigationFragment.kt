@@ -1,7 +1,7 @@
 package by.stress.radyukandroidpvt
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.fragment_navigation.*
 /**
  * Navigation Fragment *
  */
-class NavigationFragment : Fragment() {
+class NavigationFragment : androidx.fragment.app.Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,12 +27,11 @@ class NavigationFragment : Fragment() {
             savedInstanceState
         )
         val navController = NavHostFragment.findNavController(this)
-        goToDz0.setOnClickListener  { navController.navigate(R.id.dz0)  }
-        goToDz1.setOnClickListener  { navController.navigate(R.id.dz1)  }
+        goToDz0.setOnClickListener { navController.navigate(R.id.dz0) }
+        goToDz1.setOnClickListener { navController.navigate(R.id.dz1) }
         goToDz2a.setOnClickListener { navController.navigate(R.id.dz2a) }
         goToDz2b.setOnClickListener { navController.navigate(R.id.dz2b) }
-        goToDz3.setOnClickListener  { navController.navigate(R.id.dz3)  }
-        goToDz5a.setOnClickListener { navController.navigate(R.id.dz5a) }
-        goToDz5b.setOnClickListener { navController.navigate(R.id.dz5b) }
+        goToDz3.setOnClickListener { navController.navigate(R.id.dz3) }
+        goToDz4.setOnClickListener { navController.navigate(R.id.dz4) }
     }
 }
