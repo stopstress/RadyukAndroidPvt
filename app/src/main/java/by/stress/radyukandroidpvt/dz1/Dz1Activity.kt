@@ -1,6 +1,6 @@
 package by.stress.radyukandroidpvt.dz1
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import by.stress.radyukandroidpvt.R
 
