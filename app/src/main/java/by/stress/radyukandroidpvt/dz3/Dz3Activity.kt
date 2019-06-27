@@ -1,7 +1,7 @@
 package by.stress.radyukandroidpvt.dz3
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import by.stress.radyukandroidpvt.R
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
