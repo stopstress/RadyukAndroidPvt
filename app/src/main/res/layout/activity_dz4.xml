@@ -8,14 +8,14 @@
     tools:context=".dz4.Dz4Activity">
 
     <by.stress.radyukandroidpvt.dz4.ClockView
-        android:layout_width="188dp"
+        android:id="@+id/clock"
+        android:layout_width="320dp"
         android:layout_height="0dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
