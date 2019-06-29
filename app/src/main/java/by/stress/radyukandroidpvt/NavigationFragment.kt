@@ -1,7 +1,6 @@
 package by.stress.radyukandroidpvt
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,6 +32,6 @@ class NavigationFragment : androidx.fragment.app.Fragment() {
         goToDz2b.setOnClickListener { navController.navigate(R.id.dz2b) }
         goToDz3.setOnClickListener { navController.navigate(R.id.dz3) }
         goToDz4.setOnClickListener { navController.navigate(R.id.dz4) }
-        goToDz6.setOnClickListener { navController.navigate(R.id.dz6) }
+        goToDz6.setOnClickListener { navController.navigate(R.id.dz6list) }
     }
 }

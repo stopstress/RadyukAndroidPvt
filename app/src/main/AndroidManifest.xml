@@ -14,7 +14,13 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".dz6.Dz6Activity">
+        <activity android:name=".dz6.Dz6EditActivity">
+        </activity>
+        <activity android:name=".dz6.Dz6CreateActivity">
+        </activity>
+        <activity android:name=".dz6.Dz6DetailsActivity">
+        </activity>
+        <activity android:name=".dz6.Dz6ListActivity">
         </activity>
         <activity android:name=".dz4.Dz4Activity"/>
         <activity android:name=".dz3.Dz3Activity"/>
