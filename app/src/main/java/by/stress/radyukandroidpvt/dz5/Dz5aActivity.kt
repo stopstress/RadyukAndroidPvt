@@ -34,7 +34,8 @@ class Dz5aActivity : AppCompatActivity() {
         buttonDrawChart.setOnClickListener {
             editTextAddNumber.text.clear()
             editTextAddNumber.clearFocus()
-            //chart.invalidate()
+            chart.setData(numbers)
+            chart.invalidate()
         }
     }
 

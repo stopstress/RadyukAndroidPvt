@@ -23,6 +23,8 @@ class Chart// один универсальный конструктор: https:
     defStyleRes: Int = 0
 ) : View(context, attrs, defStyleAttr, defStyleRes) {
 
+    var numbersList: MutableList<Int> = mutableListOf()
+
     private var textBoundRect: Rect = Rect()
 
     private var cx = 0f
@@ -88,6 +90,7 @@ class Chart// один универсальный конструктор: https:
         paintSecondHand.style = Paint.Style.FILL_AND_STROKE
         paintSecondHand.strokeWidth = 10f
     }
+
 
     override fun onSizeChanged(width: Int, height: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(width, height, oldw, oldh)
@@ -224,5 +227,9 @@ class Chart// один универсальный конструктор: https:
 
         // рисуем начало секундной стрелки
         canvas.drawCircle(cx, cy, 5f, paintSecondHand)
+    }
+
+    fun setData(numbers : MutableList<Int>) {
+        numbersList = numbers
     }
 }
