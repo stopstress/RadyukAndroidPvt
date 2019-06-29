@@ -11,11 +11,9 @@ import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import android.util.AttributeSet
 import android.view.View
-import by.stress.radyukandroidpvt.R
 import java.util.*
 
-
-class Chart// один универсальный конструктор: https://antonioleiva.com/custom-views-android-kotlin/
+class Chart // один универсальный конструктор: https://antonioleiva.com/custom-views-android-kotlin/
 @RequiresApi(Build.VERSION_CODES.LOLLIPOP) @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
@@ -26,71 +24,52 @@ class Chart// один универсальный конструктор: https:
     var numbersList: MutableList<Int> = mutableListOf()
 
     private var textBoundRect: Rect = Rect()
+    private var pieChartRectF: RectF = RectF()
 
     private var cx = 0f
     private var cy = 0f
 
-    private var timeMinutes = 0f
-    private var timeHours = 0f
-    private var timeSeconds = 0
+    private var startAngle = 0f
+    private var sweepAngle = 0f
+    private val rnd = Random()
 
     private var textWidth = 0f
     private var textHeight = 0
 
     private var radiusExternal = 0f
-    private var radiusClockFace = 0f
-    private var radiusClockDigits = 0f
-    private var radiusHourHand = 0f
-    private var radiusMinuteHand = 0f
-    private var radiusSecondHand = 0f
+    private var radiusPieChart = 0f
+    private var radiusLineStart = 0f
+    private var radiusLineEnd = 0f
+    private var radiusText = 0f
 
-    private var yStartClockDivider = 0f
-    private var yFinishClockDivider = 0f
+    private val paintStroke = Paint(Paint.ANTI_ALIAS_FLAG)
+    private val paintFill = Paint(Paint.ANTI_ALIAS_FLAG)
+    private val paintLine = Paint(Paint.ANTI_ALIAS_FLAG)
+    private val paintDigits = Paint(Paint.ANTI_ALIAS_FLAG)
 
-    private val paintClockFace = Paint(Paint.ANTI_ALIAS_FLAG)
-    private val paintClockDivider = Paint(Paint.ANTI_ALIAS_FLAG)
-    private val paintClockDividerBold = Paint(Paint.ANTI_ALIAS_FLAG)
-    private val paintClockDigits = Paint(Paint.ANTI_ALIAS_FLAG)
-    private val paintMinuteHand = Paint(Paint.ANTI_ALIAS_FLAG)
-    private val paintHourHand = Paint(Paint.ANTI_ALIAS_FLAG)
-    private val paintSecondHand = Paint(Paint.ANTI_ALIAS_FLAG)
+    private var colorBorders: Int = ContextCompat.getColor(context, android.R.color.black)
+    private var colorBright: Int = ContextCompat.getColor(context, android.R.color.holo_orange_dark)
+    private var colorBackground: Int = ContextCompat.getColor(context, android.R.color.white)
 
-    private var clockColorMain: Int = ContextCompat.getColor(context, android.R.color.black)
-    private var clockColorBright: Int = ContextCompat.getColor(context, android.R.color.holo_orange_dark)
-
-    private var clockDigitsText: String = ""
+    private var currentPointsText: String = ""
 
     init {
-        paintClockFace.color = clockColorMain
-        paintClockFace.style = Paint.Style.STROKE
-        paintClockFace.strokeWidth = 24f
+        paintStroke.color = colorBackground
+        paintStroke.style = Paint.Style.STROKE
+        paintStroke.strokeWidth = 10f
 
-        paintClockDivider.color = clockColorMain
-        paintClockDivider.style = Paint.Style.STROKE
-        paintClockDivider.strokeWidth = 9f
+        paintFill.color = colorBright
+        paintFill.style = Paint.Style.FILL
 
-        paintClockDividerBold.color = clockColorMain
-        paintClockDividerBold.style = Paint.Style.STROKE
-        paintClockDividerBold.strokeWidth = 24f
+        paintLine.color = colorBorders
+        paintLine.style = Paint.Style.FILL_AND_STROKE
+        paintLine.strokeWidth = 6f
 
-        paintClockDigits.color = clockColorMain
-        paintClockDigits.style = Paint.Style.FILL
-        paintClockDigits.strokeWidth = 22.0f
-        paintClockDigits.textSize = 72.0f
-
-        paintHourHand.color = clockColorMain
-        paintHourHand.style = Paint.Style.FILL_AND_STROKE
-        paintHourHand.strokeWidth = 20f
-
-        paintMinuteHand.color = clockColorMain
-        paintMinuteHand.style = Paint.Style.FILL_AND_STROKE
-        paintMinuteHand.strokeWidth = 15f
-
-        paintSecondHand.color = clockColorBright
-        paintSecondHand.style = Paint.Style.FILL_AND_STROKE
-        paintSecondHand.strokeWidth = 10f
+        paintDigits.color = colorBorders
+        paintDigits.style = Paint.Style.FILL
+        paintDigits.strokeWidth = 22.0f
+        paintDigits.textSize = 72.0f
     }
-
 
     override fun onSizeChanged(width: Int, height: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(width, height, oldw, oldh)
@@ -103,24 +82,23 @@ class Chart// один универсальный конструктор: https:
         // максимальный радиус (из границ view)
         radiusExternal = limit / 2f
 
-        // радиус циферблата (без цифр)
-        radiusClockFace = (radiusExternal / 3f) * 2f
+        // радиус диаграммы (без подписей)
+        radiusPieChart = (radiusExternal / 4f) * 2f
 
-        // радиус размещения цифр
-        radiusClockDigits = (radiusExternal / 6f) * 5f
+        // границы прямоугольника для сегментов диаграммы
+        pieChartRectF.set(
+            cx - radiusPieChart, cy - radiusPieChart,
+            cx + radiusPieChart, cy + radiusPieChart
+        )
 
-        // радиус часовой стрелки
-        radiusHourHand = radiusClockFace * 0.60f
+        // радиус начала линии-выноски
+        radiusLineStart = (radiusPieChart / 10f) * 5
 
-        // радиус минутной стрелки
-        radiusMinuteHand = radiusClockFace * 0.70f
+        // радиус завершения линии-выноски
+        radiusLineEnd = (radiusPieChart / 10f) * 12
 
-        // радиус секундной стрелки
-        radiusSecondHand = radiusClockFace * 0.80f
-
-        // y-координаты разделителей
-        yStartClockDivider = cy - radiusClockFace - radiusClockFace * 0.10f
-        yFinishClockDivider = cy - radiusClockFace + radiusClockFace * 0.10f
+        // радиус завершения линии-выноски
+        radiusText = (radiusPieChart / 10f) * 15
     }
 
     @SuppressLint("DrawAllocation")
@@ -129,107 +107,54 @@ class Chart// один универсальный конструктор: https:
 
         canvas ?: return
 
-        // рисуем циферблат
-        canvas.drawCircle(cx, cy, radiusClockFace, paintClockFace)
+        // сумма баллов
+        var totalPoints = 0f
+        numbersList.forEach { totalPoints += it }
 
-        // рисуем центр циферблата
-        canvas.drawCircle(cx, cy, 20f, paintClockFace)
+        // градусов на 1 балл (Infinity при делении на 0 до подсчёта)
+        val degreesPerPoint: Float = 360 / totalPoints
 
-        // рисуем деления на циферблате
-        canvas.save()
-        for (i in 0..11) {
-            canvas.drawLine(cx, yStartClockDivider, cx, yFinishClockDivider, paintClockDivider)
-            canvas.rotate(30f, cx, cy)
-        }
-        canvas.restore()
-
-        // рисуем главные деления на циферблате
-        canvas.save()
-        for (i in 0..3) {
-            canvas.drawLine(cx, yStartClockDivider, cx, yFinishClockDivider, paintClockDividerBold)
-            canvas.rotate(90f, cx, cy)
-        }
-        canvas.restore()
-
-        // рисуем цифры
-        clockDigitsText = "12"
-        paintClockDigits.getTextBounds(clockDigitsText, 0, clockDigitsText.length, textBoundRect)
-        textWidth = paintClockDigits.measureText(clockDigitsText)
-        textHeight = textBoundRect.height()
-        canvas.drawText(
-            clockDigitsText,
-            cx - (textWidth / 2f),
-            cy + (textHeight / 2f) - radiusClockDigits,
-            paintClockDigits
-        )
-
-        clockDigitsText = "6"
-        paintClockDigits.getTextBounds(clockDigitsText, 0, clockDigitsText.length, textBoundRect)
-        textWidth = paintClockDigits.measureText(clockDigitsText)
-        textHeight = textBoundRect.height()
-        canvas.drawText(
-            clockDigitsText,
-            cx - (textWidth / 2f),
-            cy + (textHeight / 2f) + radiusClockDigits,
-            paintClockDigits
-        )
-
-        clockDigitsText = "3"
-        paintClockDigits.getTextBounds(clockDigitsText, 0, clockDigitsText.length, textBoundRect)
-        textWidth = paintClockDigits.measureText(clockDigitsText)
-        textHeight = textBoundRect.height()
-        canvas.drawText(
-            clockDigitsText,
-            cx - (textWidth / 2f) + radiusClockDigits,
-            cy + (textHeight / 2f),
-            paintClockDigits
-        )
-
-        clockDigitsText = "9"
-        paintClockDigits.getTextBounds(clockDigitsText, 0, clockDigitsText.length, textBoundRect)
-        textWidth = paintClockDigits.measureText(clockDigitsText)
-        textHeight = textBoundRect.height()
-        canvas.drawText(
-            clockDigitsText,
-            cx - (textWidth / 2f) - radiusClockDigits,
-            cy + (textHeight / 2f),
-            paintClockDigits
-        )
-
-        val calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+3:00"))
-        var hh = calendar.get(Calendar.HOUR)
-        val mm = calendar.get(Calendar.MINUTE)
-        val ss = calendar.get(Calendar.SECOND)
-
-        if (hh > 11) {
-            hh -= 12
+        // рисуем сегменты диаграммы
+        numbersList.forEach { currentPoints ->
+            sweepAngle = currentPoints * degreesPerPoint
+            paintFill.setARGB(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256))
+            canvas.drawArc(pieChartRectF, startAngle, sweepAngle, true, paintFill)
+            canvas.drawArc(pieChartRectF, startAngle, sweepAngle, true, paintStroke)
+            startAngle += sweepAngle
         }
 
-        timeMinutes = mm + ss / 60.0f
-        timeHours = hh + mm / 60.0f
-        timeSeconds = ss
-
-        // рисуем стрелки
-        canvas.save()
-        canvas.rotate(((timeHours / 12.0f) * 360.0f), cx, cy)
-        canvas.drawLine(cx, cy, cx, cy - radiusHourHand, paintHourHand)
-        canvas.restore()
+        // рисуем линии-выноски c числами
+        sweepAngle = 0f
+        startAngle = 0f
 
         canvas.save()
-        canvas.rotate(((timeMinutes / 60.0f) * 360.0f), cx, cy)
-        canvas.drawLine(cx, cy, cx, cy - radiusMinuteHand, paintMinuteHand)
-        canvas.restore()
+        canvas.rotate(90f, cx, cy)
 
-        canvas.save()
-        canvas.rotate(((timeSeconds / 60.0f) * 360.0f), cx, cy)
-        canvas.drawLine(cx, cy, cx, cy - radiusSecondHand, paintSecondHand)
-        canvas.restore()
+        numbersList.forEach { currentPoints ->
+            sweepAngle = currentPoints * degreesPerPoint
+            canvas.rotate(sweepAngle / 2, cx, cy)
+            canvas.drawLine(cx, cy - radiusLineStart, cx, cy - radiusLineEnd, paintLine)
 
-        // рисуем начало секундной стрелки
-        canvas.drawCircle(cx, cy, 5f, paintSecondHand)
+            // рисуем подписи
+            canvas.rotate(-(sweepAngle / 2 + startAngle + 90), cx, cy - radiusText)
+            currentPointsText = currentPoints.toString()
+            paintDigits.getTextBounds(currentPointsText, 0, currentPointsText.length, textBoundRect)
+            textWidth = paintDigits.measureText(currentPointsText)
+            textHeight = textBoundRect.height()
+            canvas.drawText(
+                currentPointsText,
+                cx - (textWidth / 2f),
+                cy + (textHeight / 2f) - radiusText,
+                paintDigits
+            )
+            canvas.rotate((sweepAngle / 2 + startAngle + 90), cx, cy - radiusText)
+            canvas.rotate(sweepAngle / 2, cx, cy)
+            startAngle += sweepAngle
+        }
+        canvas.restore()
     }
 
-    fun setData(numbers : MutableList<Int>) {
+    fun setData(numbers: MutableList<Int>) {
         numbersList = numbers
     }
 }

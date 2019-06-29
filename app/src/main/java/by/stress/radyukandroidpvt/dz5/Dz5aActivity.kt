@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_dz5a.chart
 import org.jetbrains.anko.toast
 
 class Dz5aActivity : AppCompatActivity() {
-    val numbers: MutableList<Int> = mutableListOf(10, 20, 30)
+    val numbers: MutableList<Int> = mutableListOf(10, 10)
     var numbersTextString = ""
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -35,10 +35,11 @@ class Dz5aActivity : AppCompatActivity() {
         }
 
         buttonDrawChart.setOnClickListener {
+            textViewNumbersShow.text = formatNumText(numbers)
             editTextAddNumber.text.clear()
             editTextAddNumber.clearFocus()
-            chart.setData(numbers)
             chart.invalidate()
+            chart.setData(numbers)
         }
     }
 

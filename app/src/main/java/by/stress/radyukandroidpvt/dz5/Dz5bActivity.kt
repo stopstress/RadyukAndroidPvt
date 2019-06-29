@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import by.stress.radyukandroidpvt.R
 import kotlinx.android.synthetic.main.activity_dz5b.*
 
-
 class Dz5bActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
