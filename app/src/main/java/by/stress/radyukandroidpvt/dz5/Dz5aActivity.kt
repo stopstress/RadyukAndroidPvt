@@ -43,16 +43,12 @@ class Dz5aActivity : AppCompatActivity() {
     }
 
     fun formatNumText(numbers: MutableList<Int>): String {
-
         val numbersText = StringBuilder()
-
         numbersText.append("Numbers Array: ")
         numbersText.append(numbers.toString())
         numbersTextString = numbersText.toString()
-
         numbersTextString = numbersTextString.replace("[", "")
         numbersTextString = numbersTextString.replace("]", "")
-
         return numbersTextString
     }
 }
