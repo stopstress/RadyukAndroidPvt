@@ -27,6 +27,7 @@
         <action
             android:id="@+id/action_navigationFragment_to_dz4"
             app:destination="@id/dz4" />
+        <action android:id="@+id/action_navigationFragment_to_dz6Activity" app:destination="@+id/dz6"/>
     </fragment>
     <activity
         android:id="@+id/dz0"
@@ -58,4 +59,6 @@
         android:name="by.stress.radyukandroidpvt.dz4.Dz4Activity"
         android:label="dz4"
         tools:layout="@layout/activity_dz4" />
+    <activity android:id="@+id/dz6" android:name="by.stress.radyukandroidpvt.dz6.Dz6Activity"
+              android:label="dz6" tools:layout="@layout/activity_dz6"/>
 </navigation>

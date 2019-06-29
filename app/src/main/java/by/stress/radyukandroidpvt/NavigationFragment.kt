@@ -33,5 +33,6 @@ class NavigationFragment : androidx.fragment.app.Fragment() {
         goToDz2b.setOnClickListener { navController.navigate(R.id.dz2b) }
         goToDz3.setOnClickListener { navController.navigate(R.id.dz3) }
         goToDz4.setOnClickListener { navController.navigate(R.id.dz4) }
+        goToDz6.setOnClickListener { navController.navigate(R.id.dz6) }
     }
 }

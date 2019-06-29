@@ -45,4 +45,10 @@
         style="@style/MenuButtonStyle"
         android:text="@string/dz4" />
 
+
+    <Button
+            android:id="@+id/goToDz6"
+            style="@style/MenuButtonStyle"
+            android:text="@string/dz6" />
+
 </LinearLayout>
