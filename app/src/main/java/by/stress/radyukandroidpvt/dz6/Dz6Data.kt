@@ -6,7 +6,7 @@ import kotlin.collections.ArrayList
 /**
  * Helper class for providing sample content
  */
-object Dz6Data {
+object Dz6Data { // https://antonioleiva.com/objects-kotlin/ // object Singleton // You don’t need more.
 
     private var table = arrayOf(
         arrayOf(1, "Арктическая лиса Arctic fox", "https://cdn.pixabay.com/photo/2016/10/21/14/46/norway-1758183_960_720.jpg"),
