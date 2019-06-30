@@ -13,7 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:hardwareAccelerated="false"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".dz5.Dz5bActivity" />
+        <activity android:name=".dz5.Dz5aActivity" />
         <activity android:name=".dz4.Dz4Activity" />
         <activity android:name=".dz3.Dz3Activity" />
         <activity android:name=".dz2.Dz2bActivity" />
