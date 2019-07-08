@@ -14,4 +14,28 @@
         <item name="android:textAllCaps">false</item>
     </style>
 
+    <style name="DzFieldTitleBlack">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:fontFamily">@font/monda_regular</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">right</item>
+        <item name="android:textColor">@color/dz3colorBlack</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+    </style>
+
+    <style name="DzFieldValueBlack">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">3</item>
+        <item name="android:fontFamily">@font/monda_regular</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textColor">@color/dz3colorBlack</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
 </resources>

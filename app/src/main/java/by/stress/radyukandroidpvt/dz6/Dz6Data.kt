@@ -43,7 +43,7 @@ object Dz6Data { // https://antonioleiva.com/objects-kotlin/ // object Singleton
     var ITEMS: MutableList<StudentItem> = ArrayList()
 
     // A map of sample items, by ID.
-    val ITEM_MAP: MutableMap<String, StudentItem> = HashMap()
+    var ITEM_MAP: MutableMap<String, StudentItem> = HashMap()
 
     // длина исходного массива
     private val COUNT = table.size
@@ -51,7 +51,7 @@ object Dz6Data { // https://antonioleiva.com/objects-kotlin/ // object Singleton
     // Add sample items
     init {
         for (i in 0 until COUNT) {
-            addItem(createStudentItem(i))
+            addItem(createStudentItemDefault(i))
         }
     }
 
@@ -60,7 +60,16 @@ object Dz6Data { // https://antonioleiva.com/objects-kotlin/ // object Singleton
         ITEM_MAP[item.id] = item
     }
 
-    private fun createStudentItem(i: Int): StudentItem {
+    fun deleteItem(id: String) {
+        ITEMS.minus(ITEM_MAP[id])
+        ITEM_MAP.remove(id)
+    }
+
+    private fun getStudentItem(id: String): StudentItem? {
+        return ITEM_MAP[id]
+    }
+
+    private fun createStudentItemDefault(i: Int): StudentItem {
         return StudentItem(
             UUID.randomUUID().toString(),
             table[i][2].toString(),

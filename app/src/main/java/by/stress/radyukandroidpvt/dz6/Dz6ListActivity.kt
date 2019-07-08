@@ -14,7 +14,11 @@ import org.jetbrains.anko.toast
 
 class Dz6ListActivity : AppCompatActivity(), Dz6RecyclerViewAdapter.ClickListener, SearchView.OnQueryTextListener {
 
+    //var filteredItems: List<Dz6Data.StudentItem> = ITEMS
     var filteredItems: List<Dz6Data.StudentItem> = ITEMS
+
+
+    //private lateinit var filteredItems: List<Dz6Data.StudentItem>
 
     override fun onQueryTextSubmit(query: String?): Boolean {
         this.filteredItems = ITEMS.filter { it.name.toLowerCase().contains(query.toString().toLowerCase()) }
@@ -32,6 +36,8 @@ class Dz6ListActivity : AppCompatActivity(), Dz6RecyclerViewAdapter.ClickListene
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dz6_list)
 
+        //filteredItems = ITEMS
+
         floatingActionButton.setOnClickListener {
             val intent = Intent(this, Dz6CreateActivity::class.java)
             startActivity(intent)
@@ -43,8 +49,6 @@ class Dz6ListActivity : AppCompatActivity(), Dz6RecyclerViewAdapter.ClickListene
         val searchView = findViewById<SearchView>(R.id.searchView)
         searchView.setOnQueryTextListener(this)
 
-        recyclerViewSet()
-        recyclerViewUpdate()
     }
 
     fun recyclerViewSet() {
@@ -54,13 +58,40 @@ class Dz6ListActivity : AppCompatActivity(), Dz6RecyclerViewAdapter.ClickListene
     }
 
     fun recyclerViewUpdate() {
+        //filteredItems = ITEMS
         recyclerViewWidget.adapter = Dz6RecyclerViewAdapter(filteredItems, this)
+        //(recyclerViewWidget.adapter as Dz6RecyclerViewAdapter).notifyDataSetChanged()
     }
 
     override fun onItemClick(item: Dz6Data.StudentItem) {
-        toast(item.id)
-//        val intent = Intent(this,Dz6EditActivity::class.java)
-//        intent.putExtra("id", item.id)
-//        startActivity(intent)
+        val intent = Intent(this,Dz6DetailsActivity::class.java)
+        intent.putExtra("id", item.id)
+        startActivity(intent)
     }
+
+    override fun onResume() {
+        super.onResume()
+
+        recyclerViewSet()
+        this.filteredItems = ITEMS
+        recyclerViewUpdate()
+    }
+
+    /*
+    override fun onStart() {
+        super.onStart()
+        //filteredItems = ITEMS
+        //recyclerViewWidget.adapter?.notifyDataSetChanged()
+        //recyclerViewUpdate()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        //recyclerViewUpdate()
+        //filteredItems = ITEMS
+        //recyclerViewWidget.adapter?.notifyDataSetChanged()
+        //recyclerViewUpdate()
+        //recyclerView.getAdapter().notifyDataSetChanged();
+    }
+    */
 }

@@ -4,6 +4,11 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import by.stress.radyukandroidpvt.R
+import android.text.method.TextKeyListener.clear
+import androidx.lifecycle.ViewModel
+//import android.R
+
+
 
 /**
  * RecyclerView.Adapter
@@ -56,4 +61,18 @@ class Dz6RecyclerViewAdapter(
     interface ClickListener {
         fun onItemClick(item: Dz6Data.StudentItem)
     }
+
+
+
+//    public void update(ArrayList<Person> data) {
+//        mData.clear()
+//        mData.addAll(data)
+//        notifyDataSetChanged();
+//    }
+
+//    fun updateData(viewModels: ArrayList<ViewModel>) {
+//        items.clear()
+//        items.addAll(viewModels)
+//        notifyDataSetChanged()
+//    }
 }
