@@ -28,8 +28,6 @@ class Dz6RecyclerViewAdapter(
     }
 
     /*
-
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
         holder.mIdView.text = item.id
