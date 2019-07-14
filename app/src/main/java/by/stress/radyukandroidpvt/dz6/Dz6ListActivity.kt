@@ -56,20 +56,18 @@ class Dz6ListActivity : AppCompatActivity(), Dz6RecyclerViewAdapter.ClickListene
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
-        this.filteredItems = ITEMS.filter { it.name.toLowerCase().contains(query.toString().toLowerCase()) }
+        updateFilteredItems(query)
         recyclerViewUpdate()
         return true
     }
 
     override fun onQueryTextChange(newText: String?): Boolean {
-        this.filteredItems = ITEMS.filter { it.name.toLowerCase().contains(newText.toString().toLowerCase()) }
+        updateFilteredItems(newText)
         recyclerViewUpdate()
         return true
     }
 
     fun updateFilteredItems(query: String?) {
-
+        this.filteredItems = ITEMS.filter { it.name.toLowerCase().contains(query.toString().toLowerCase()) }
     }
-
-
 }
