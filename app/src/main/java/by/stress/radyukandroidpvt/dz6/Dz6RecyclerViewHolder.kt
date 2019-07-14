@@ -13,9 +13,9 @@ class Dz6RecyclerViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val imageView = itemView.findViewById<ImageView>(R.id.itemImageView)
     private val textView = itemView.findViewById<TextView>(R.id.itemTextView)
 
+    // указываем, где какие значения отображать на слайде при привязке (bind) его к объекту (item)
     fun bind(item: StudentItem) {
         textView.text = item.name
-        imageView.setImageResource(R.drawable.ic_launcher_background)
         Glide.with(itemView)
             .load(item.imageUrl)
             .apply(RequestOptions.circleCropTransform())

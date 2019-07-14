@@ -8,9 +8,7 @@ import by.stress.radyukandroidpvt.dz6.Dz6Data.ITEM_MAP
 import by.stress.radyukandroidpvt.dz6.Dz6Data.deleteItem
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import kotlinx.android.synthetic.main.activity_dz3.*
 import kotlinx.android.synthetic.main.activity_dz6_details.*
-import org.jetbrains.anko.toast
 
 class Dz6DetailsActivity : AppCompatActivity() {
 

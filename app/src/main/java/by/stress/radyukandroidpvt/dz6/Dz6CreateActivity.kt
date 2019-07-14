@@ -5,10 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import by.stress.radyukandroidpvt.R
-import by.stress.radyukandroidpvt.dz6.Dz6Data.ITEM_MAP
 import by.stress.radyukandroidpvt.dz6.Dz6Data.checkStudentFields
 import by.stress.radyukandroidpvt.dz6.Dz6Data.createItem
-import by.stress.radyukandroidpvt.dz6.Dz6Data.updateItem
 import kotlinx.android.synthetic.main.activity_dz6_edit.*
 import org.jetbrains.anko.toast
 
@@ -23,7 +21,6 @@ class Dz6CreateActivity : AppCompatActivity() {
 
         buttonSave.setOnClickListener { createNewRecord() }
     }
-
 
     fun createNewRecord() {
 
@@ -64,26 +61,4 @@ class Dz6CreateActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
 }
-
-/*
-
-        editTextId.setText(currentStudent.id)
-
-        editTextId.setOnClickListener { toast("Значение этого поля генерируется приложением автоматически " +
-                "и поэтому недоступно для редактирования.") }
-
-        editTextImageUrl.setText(currentStudent.imageUrl)
-
-        editTextName.setText(currentStudent.name)
-
-        editTextAge.setText(currentStudent.age.toString())
-
-
-    }
-
-}
-
-
-*/

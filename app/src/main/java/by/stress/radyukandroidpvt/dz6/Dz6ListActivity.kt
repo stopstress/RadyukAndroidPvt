@@ -10,21 +10,22 @@ import androidx.recyclerview.widget.RecyclerView
 import by.stress.radyukandroidpvt.R
 import by.stress.radyukandroidpvt.dz6.Dz6Data.ITEMS
 import kotlinx.android.synthetic.main.activity_dz6_list.*
-import org.jetbrains.anko.toast
 
 class Dz6ListActivity : AppCompatActivity(), Dz6RecyclerViewAdapter.ClickListener, SearchView.OnQueryTextListener {
 
+    // первоначальный отфильтрованный список включает все пункты ITEMS
     var filteredItems: List<StudentItem> = ITEMS
 
+    // настройка списка
     fun recyclerViewSet() {
         recyclerViewWidget.setHasFixedSize(true)
         recyclerViewWidget.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         recyclerViewWidget.isNestedScrollingEnabled = false // не внутри другого скролла
     }
 
+    // приобновлении передаём адаптеру новый отфильтрованный список
     fun recyclerViewUpdate() {
         recyclerViewWidget.adapter = Dz6RecyclerViewAdapter(filteredItems, this)
-        //recyclerViewWidget.adapter?.notifyDataSetChanged()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,24 +50,24 @@ class Dz6ListActivity : AppCompatActivity(), Dz6RecyclerViewAdapter.ClickListene
         recyclerViewUpdate()
     }
 
+    // приклике по строке переходим на страницу с детальной информацией
     override fun onItemClick(item: StudentItem) {
-        val intent = Intent(this,Dz6DetailsActivity::class.java)
+        val intent = Intent(this, Dz6DetailsActivity::class.java)
         intent.putExtra("id", item.id)
         startActivity(intent)
     }
 
+    // фильтрация списка
     override fun onQueryTextSubmit(query: String?): Boolean {
         updateFilteredItems(query)
         recyclerViewUpdate()
         return true
     }
-
     override fun onQueryTextChange(newText: String?): Boolean {
         updateFilteredItems(newText)
         recyclerViewUpdate()
         return true
     }
-
     fun updateFilteredItems(query: String?) {
         this.filteredItems = ITEMS.filter { it.name.toLowerCase().contains(query.toString().toLowerCase()) }
     }
