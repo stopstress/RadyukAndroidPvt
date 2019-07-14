@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar
 import by.stress.radyukandroidpvt.R
 import by.stress.radyukandroidpvt.dz6.Dz6Data.ITEM_MAP
 import by.stress.radyukandroidpvt.dz6.Dz6Data.checkStudentFields
+import by.stress.radyukandroidpvt.dz6.Dz6Data.updateItem
 
 import kotlinx.android.synthetic.main.activity_dz6_edit.*
 import org.jetbrains.anko.toast
@@ -65,7 +66,16 @@ class Dz6EditActivity : AppCompatActivity() {
 
         // если всё правильно - сохраняем данные и возвращаемся на страницу с детальной информацией
         } else {
-            toast("OK!")
+
+            // пытаемся обновить запись и выводим сообщение о результатах
+            val itemWasUpdated: Boolean = updateItem(studentAfterEditing)
+            if (itemWasUpdated) {
+                toast("Запись была успешно обновлена")
+            } else {
+                toast("Не удалось обновить запись")
+            }
+
+            // переходим на исходную страницу
             val intent = Intent(this, Dz6DetailsActivity::class.java)
             intent.putExtra("id", currentId)
             startActivity(intent)
