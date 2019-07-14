@@ -29,4 +29,10 @@
     <string name="dz4">Dz4</string>
     <string name="dz6">Dz6</string>
     <string name="content_description_photo">Фото</string>
+    <string name="textViewNameTitle">Имя:</string>
+    <string name="textViewIdTitle">Id:</string>
+    <string name="textViewImageUrlTitle">Image Url:</string>
+    <string name="textViewAgeTitle">Возраст:</string>
+    <string name="button_update">Обновить</string>
+    <string name="button_save">Сохранить</string>
 </resources>

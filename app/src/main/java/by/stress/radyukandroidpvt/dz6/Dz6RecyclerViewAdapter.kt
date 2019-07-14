@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModel
  * RecyclerView.Adapter
  */
 class Dz6RecyclerViewAdapter(
-    private val items: List<Dz6Data.StudentItem>,
+    private val items: List<StudentItem>,
     private val listener: ClickListener
 ) : RecyclerView.Adapter<Dz6RecyclerViewHolder>() {
 
@@ -59,7 +59,7 @@ class Dz6RecyclerViewAdapter(
     override fun getItemCount(): Int = items.size
 
     interface ClickListener {
-        fun onItemClick(item: Dz6Data.StudentItem)
+        fun onItemClick(item: StudentItem)
     }
 
 

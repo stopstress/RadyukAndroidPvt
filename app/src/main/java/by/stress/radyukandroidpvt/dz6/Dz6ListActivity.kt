@@ -14,7 +14,7 @@ import org.jetbrains.anko.toast
 
 class Dz6ListActivity : AppCompatActivity(), Dz6RecyclerViewAdapter.ClickListener, SearchView.OnQueryTextListener {
 
-    var filteredItems: List<Dz6Data.StudentItem> = ITEMS
+    var filteredItems: List<StudentItem> = ITEMS
 
     fun recyclerViewSet() {
         recyclerViewWidget.setHasFixedSize(true)
@@ -49,7 +49,7 @@ class Dz6ListActivity : AppCompatActivity(), Dz6RecyclerViewAdapter.ClickListene
         recyclerViewUpdate()
     }
 
-    override fun onItemClick(item: Dz6Data.StudentItem) {
+    override fun onItemClick(item: StudentItem) {
         val intent = Intent(this,Dz6DetailsActivity::class.java)
         intent.putExtra("id", item.id)
         startActivity(intent)

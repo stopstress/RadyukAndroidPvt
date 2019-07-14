@@ -15,7 +15,7 @@ import org.jetbrains.anko.toast
 class Dz6DetailsActivity : AppCompatActivity() {
 
     private lateinit var currentId: String
-    private lateinit var currentStudent: Dz6Data.StudentItem
+    private lateinit var currentStudent: StudentItem
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +49,11 @@ class Dz6DetailsActivity : AppCompatActivity() {
 
         buttonDelete.setOnClickListener {
             deleteItem(currentId)
+            val intent = Intent(this, Dz6ListActivity::class.java)
+            startActivity(intent)
+        }
+
+        buttonList.setOnClickListener {
             val intent = Intent(this, Dz6ListActivity::class.java)
             startActivity(intent)
         }

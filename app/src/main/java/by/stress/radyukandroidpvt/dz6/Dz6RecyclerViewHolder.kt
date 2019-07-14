@@ -13,7 +13,7 @@ class Dz6RecyclerViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val imageView = itemView.findViewById<ImageView>(R.id.itemImageView)
     private val textView = itemView.findViewById<TextView>(R.id.itemTextView)
 
-    fun bind(item: Dz6Data.StudentItem) {
+    fun bind(item: StudentItem) {
         textView.text = item.name
         imageView.setImageResource(R.drawable.ic_launcher_background)
         Glide.with(itemView)

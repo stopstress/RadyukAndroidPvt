@@ -1,6 +1,7 @@
 package by.stress.radyukandroidpvt.dz6
 
 import android.util.Log
+import android.webkit.URLUtil
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -80,18 +81,16 @@ object Dz6Data { // https://antonioleiva.com/objects-kotlin/ // object Singleton
         ITEM_MAP.remove(id)
     }
 
+    // проверка правильности ввода данных
+    fun checkStudentFields(st: StudentItem): String {
 
+        var msg = ""
+        if (st.name.isEmpty()) msg += "Необходимо указать имя студента. "
+        if (st.imageUrl.isEmpty()) msg += "Необходимо ввести ссылку на фотографию студента. "
+        if(!URLUtil.isValidUrl(st.imageUrl)) msg += "Пожалуйста, исправьте ошибки в ссылке на фотографию студента. "
+        //if (st.age.toString().isEmpty()) msg += "Необходимо указать возраст студента. "
+        //if (st.age <= 0) msg += "Необходимо правильно указать количество полных лет студента. "
 
-
-//    private fun getStudentItem(id: String): StudentItem? {
-//        return ITEM_MAP[id]
-//    }
-
-    // item representing a piece of content
-    data class StudentItem(
-        val id: String,
-        val imageUrl: String,
-        val name: String,
-        val age: Int
-    ) { override fun toString(): String = "$name (возраст: $age, ID: $id)" }
+        return msg
+    }
 }
