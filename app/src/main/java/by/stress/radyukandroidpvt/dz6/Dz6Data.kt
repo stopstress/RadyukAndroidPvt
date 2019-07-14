@@ -1,5 +1,6 @@
 package by.stress.radyukandroidpvt.dz6
 
+import android.util.Log
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -8,6 +9,7 @@ import kotlin.collections.ArrayList
  */
 object Dz6Data { // https://antonioleiva.com/objects-kotlin/ // object Singleton // You don’t need more.
 
+    // sample данные
     private var table = arrayOf(
         arrayOf(1, "Арктическая лиса Arctic fox", "https://cdn.pixabay.com/photo/2016/10/21/14/46/norway-1758183_960_720.jpg"),
         arrayOf(2, "Африканский лев African lion", "https://cdn.pixabay.com/photo/2016/01/02/16/53/lion-1118467_960_720.jpg"),
@@ -40,35 +42,24 @@ object Dz6Data { // https://antonioleiva.com/objects-kotlin/ // object Singleton
     )
 
     // An array of sample items.
-    var ITEMS: MutableList<StudentItem> = ArrayList()
+    var ITEMS: ArrayList<StudentItem> = ArrayList()
 
     // A map of sample items, by ID.
-    var ITEM_MAP: MutableMap<String, StudentItem> = HashMap()
+    var ITEM_MAP: HashMap<String, StudentItem> = HashMap()
 
     // длина исходного массива
     private val COUNT = table.size
 
-    // Add sample items
+    // создаём исходные массивы
     init {
         for (i in 0 until COUNT) {
             addItem(createStudentItemDefault(i))
         }
     }
-
     private fun addItem(item: StudentItem) {
         ITEMS.add(item)
         ITEM_MAP[item.id] = item
     }
-
-    fun deleteItem(id: String) {
-        ITEMS.minus(ITEM_MAP[id])
-        ITEM_MAP.remove(id)
-    }
-
-    private fun getStudentItem(id: String): StudentItem? {
-        return ITEM_MAP[id]
-    }
-
     private fun createStudentItemDefault(i: Int): StudentItem {
         return StudentItem(
             UUID.randomUUID().toString(),
@@ -77,6 +68,24 @@ object Dz6Data { // https://antonioleiva.com/objects-kotlin/ // object Singleton
             table[i][0].toString().toInt()
         )
     }
+
+    // удаление элемента
+    fun deleteItem(id: String) {
+
+        // удаляем элемент из ArrayList ITEMS
+        val indexInArrayList = ITEMS.indexOf(ITEM_MAP[id])
+        ITEMS.removeAt(indexInArrayList)
+
+        // удаляем элемент из HashMap ITEM_MAP
+        ITEM_MAP.remove(id)
+    }
+
+
+
+
+//    private fun getStudentItem(id: String): StudentItem? {
+//        return ITEM_MAP[id]
+//    }
 
     // item representing a piece of content
     data class StudentItem(

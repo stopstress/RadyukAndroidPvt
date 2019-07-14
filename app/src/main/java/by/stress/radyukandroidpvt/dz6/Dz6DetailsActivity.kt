@@ -42,16 +42,15 @@ class Dz6DetailsActivity : AppCompatActivity() {
         super.onResume()
 
         buttonEdit.setOnClickListener {
-            val intent = Intent(this,Dz6EditActivity::class.java)
+            val intent = Intent(this, Dz6EditActivity::class.java)
             intent.putExtra("id", currentId)
             startActivity(intent)
         }
 
         buttonDelete.setOnClickListener {
             deleteItem(currentId)
-            val intent = Intent(this,Dz6ListActivity::class.java)
+            val intent = Intent(this, Dz6ListActivity::class.java)
             startActivity(intent)
         }
     }
-
 }
