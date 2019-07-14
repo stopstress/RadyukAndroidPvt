@@ -2,6 +2,7 @@ package by.stress.radyukandroidpvt.dz6
 
 import android.util.Log
 import android.webkit.URLUtil
+import kotlinx.android.synthetic.main.activity_dz6_edit.*
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -68,6 +69,21 @@ object Dz6Data { // https://antonioleiva.com/objects-kotlin/ // object Singleton
             table[i][1].toString(),
             table[i][0].toString().toInt()
         )
+    }
+
+    // добавление нового элемента
+    fun createItem(newStudent: StudentItem): Boolean {
+
+        val createStudent = StudentItem(
+            UUID.randomUUID().toString(),
+            newStudent.imageUrl,
+            newStudent.name,
+            newStudent.age
+        )
+
+        addItem(createStudent)
+
+        return true
     }
 
     // удаление элемента
