@@ -48,7 +48,6 @@ class Dz6ListActivity : AppCompatActivity(), Dz6RecyclerViewAdapter.ClickListene
 
         val searchView = findViewById<SearchView>(R.id.searchView)
         searchView.setOnQueryTextListener(this)
-
     }
 
     fun recyclerViewSet() {
